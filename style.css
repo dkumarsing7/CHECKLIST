@@ -24,6 +24,7 @@ body {
     flex-direction: column;
     height: 70%;
     min-width: 2rem;
+    max-width: 40em;
     margin-bottom: 70px;
 }
 
@@ -72,7 +73,9 @@ ul {
     position: relative;
     border: 2px solid black;
     border-radius: 1rem;
-    padding-right: 2rem;
+    padding-right: 4rem;
+    text-wrap: wrap;
+    overflow: auto;
 }
 
 .checkBox {
@@ -94,7 +97,7 @@ ul {
     background: red;
     color: #fff;
     position: absolute;
-    right: 2rem;
+    right: 1rem;
     cursor: pointer;
     font-size: 0.7em;
 }
