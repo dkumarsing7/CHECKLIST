@@ -72,6 +72,7 @@ ul {
     position: relative;
     border: 2px solid black;
     border-radius: 1rem;
+    padding-right: 2rem;
 }
 
 .checkBox {
