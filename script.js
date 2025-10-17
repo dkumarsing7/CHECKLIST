@@ -7,13 +7,13 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 const isFirstLaunch = !localStorage.getItem("initialized");
 
 if (isFirstLaunch) {
-    tasks.push({ text: "YOUR DATA WILL AUTOMATICALLY SAVED HERE", done: false });
-    tasks.push({ text: "WEEKLY UPDATE BY DEVELOPER FOR BEST USER EXPERIENCES", done: false });
-    tasks.push({ text: "SAMPLE TASK", done: false });
-    tasks.push({ text: "21 OCT DRIVE", done: false });
-    tasks.push({ text: "PRACTICE PYTHON", done: false });
     tasks.push({ text: "APTITUDE WORK PROBLEM", done: false });
-    tasks.push({ text: "APTITUDE BLOOD RELATION PROBLEM", done: false });
+    tasks.push({ text: "PRACTICE PYTHON", done: true });
+    tasks.push({ text: "21 OCT DRIVE", done: false });
+    tasks.push({ text: "APTITUDE BLOOD RELATION PROBLEM", done: true });
+    tasks.push({ text: "SAMPLE TASK", done: false });
+    tasks.push({ text: "WEEKLY UPDATE BY DEVELOPER FOR BEST USER EXPERIENCES", done: false });
+    tasks.push({ text: "YOUR DATA WILL AUTOMATICALLY SAVED HERE", done: false });
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
     localStorage.setItem("initialized", "true");
