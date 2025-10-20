@@ -75,7 +75,7 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-btn.addEventListener("click", () => {
+function add() {
     const inputText = text.value.trim();
     if (!inputText) return;
 
@@ -83,6 +83,11 @@ btn.addEventListener("click", () => {
     text.value = "";
     saveTasks();
     renderTasks();
+}
+btn.addEventListener("click", add);
+
+text.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { add() }
 });
 
 renderTasks();
