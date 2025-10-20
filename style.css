@@ -30,7 +30,7 @@ h1 {
     padding: 2rem;
     width: 90%;
     max-width: 600px;
-    height: 70vh;
+    max-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -88,6 +88,7 @@ ul {
     flex-direction: column-reverse;
     gap: 0.6rem;
     padding-right: 0.3rem;
+    padding-top: 0.2rem;
 }
 
 
