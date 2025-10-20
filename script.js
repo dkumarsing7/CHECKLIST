@@ -3,7 +3,6 @@ const ul = document.querySelector("ul");
 const text = document.querySelector("input");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
 const isFirstLaunch = !localStorage.getItem("initialized");
 
 if (isFirstLaunch) {
@@ -24,7 +23,10 @@ function renderTasks() {
     tasks.forEach((task, index) => {
         const taskDiv = document.createElement("div");
         taskDiv.classList.add("task");
-        if (task.done) taskDiv.style.background = "lightgrey";
+
+        if (task.done) {
+            taskDiv.style.background = "lightgrey";
+        }
 
         const checkBox = document.createElement("div");
         checkBox.classList.add("checkBox");
@@ -34,6 +36,16 @@ function renderTasks() {
         content.classList.add("content");
         content.textContent = task.text;
         if (task.done) content.style.textDecoration = "line-through";
+
+        // Double-click to edit task
+        content.addEventListener("dblclick", () => {
+            const newText = prompt("Edit your task:", task.text);
+            if (newText !== null && newText.trim() !== "") {
+                task.text = newText.trim();
+                saveTasks();
+                renderTasks();
+            }
+        });
 
         const close = document.createElement("div");
         close.classList.add("close");
